@@ -26,7 +26,7 @@ class MonsterKong(PyGameWrapper):
 
         self.map_config = map_config
         self.map_array = None
-        if not map_config or not map_config.has_key('map_array'):
+        if not map_config or not 'map_array' in map_config:
             self.height = 315
             self.width = 300
         else:
@@ -45,7 +45,7 @@ class MonsterKong(PyGameWrapper):
         PyGameWrapper.__init__(
             self, self.width, self.height, actions=actions)
         # value of reward
-        if not map_config.has_key('rewards'):
+        if not 'rewards' in map_config:
             self.rewards = {
                 "positive": 5,
                 "win": 50,

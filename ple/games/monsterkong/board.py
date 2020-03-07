@@ -38,13 +38,13 @@ class Board(object):
         self.init_lives = 1
         self.end_game = defaultdict(bool, {(8, True)})  # end with princess
         if map_config:
-            if map_config.has_key('map_array'):
+            if 'map_array' in map_config:
                 self.map_array = map_config['map_array']
-            if map_config.has_key('init_score'):
+            if 'init_score' in map_config:
                 self.init_score = map_config['init_score']
-            if map_config.has_key('init_lives'):
+            if 'init_lives' in map_config:
                 self.init_lives = map_config['init_lives']
-            if map_config.has_key('end_game'):
+            if 'end_game' in map_config:
                 self.end_game = defaultdict(bool, map_config['end_game'])
 
         self.IMAGES = {
@@ -334,7 +334,7 @@ class Board(object):
                     continue
 
                 map_dict = self.singletonMapDict()
-                if not map_dict.has_key(self.map[x][y]):
+                if not self.map[x][y] in map_dict:
                     # Nothing to be placed
                     continue
                 self.append_list(x, y, map_dict[self.map[x][y]])

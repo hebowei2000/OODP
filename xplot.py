@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 import collections
 import time
-import cPickle as pickle
+import pickle
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 

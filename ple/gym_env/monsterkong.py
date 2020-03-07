@@ -24,17 +24,17 @@ class MonsterKongEnv(gym.Env):
         self.reward = 0.0
         self.episode_end_sleep = 0.2
 
-        if map_config.has_key('fps'):
+        if 'fps' in map_config:
             self.fps = map_config['fps']
-        if map_config.has_key('frame_skip'):
+        if 'frame_skip' in map_config:
             self.frame_skip = map_config['frame_skip']
-        if map_config.has_key('force_fps'):
+        if 'force_fps' in map_config:
             self.force_fps = map_config['force_fps']
-        if map_config.has_key('display_screen'):
+        if 'display_screen' in map_config:
             self.display_screen = map_config['display_screen']
-        if map_config.has_key('episode_length'):
+        if 'episode_length' in map_config:
             self.nb_frames = map_config['episode_length']
-        if map_config.has_key('episode_end_sleep'):
+        if 'episode_end_sleep' in map_config:
             self.episode_end_sleep = map_config['episode_end_sleep']
         self.current_step = 0
 

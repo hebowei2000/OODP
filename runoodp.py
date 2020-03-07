@@ -17,7 +17,7 @@ from gym.envs.registration import register
 import imp
 
 # model parameters
-max_iter = 5*10**5
+max_iter = 5*10**4
 learning_rate = 1e-4
 batch_size = 16
 height = width = 80
@@ -83,12 +83,12 @@ def output_acc(model,replay_buffer,test_buffer,bgimage):
 	train_acc = train_acc/train_acc[6]
 	test_acc = test_acc/test_acc[6]
 
-	print '========Training environments========'
+	print ('========Training environments========')
 	for i in range(3):
-		print str(i)+'-error accuracy: '+str(train_acc[i])
-	print '========Testing environments========'
+		print (str(i)+'-error accuracy: '+str(train_acc[i]))
+	print ('========Testing environments========')
 	for i in range(3):
-		print str(i)+'-error accuracy: '+str(test_acc[i])
+		print (str(i)+'-error accuracy: '+str(test_acc[i]))
 
 def main():
 	# Get arguments
