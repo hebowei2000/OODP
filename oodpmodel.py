@@ -628,12 +628,12 @@ class OODP:
 
         _, cost = self.sess.run([self.train_total_op, self.Total_loss],
                                 feed_dict={
-            self.input_I: I,
+                                    self.input_I:I[:,20:100,20:100,:],
             self.input_actions: actions,
-            self.input_bgI: bgimage,
-            self.input_nextI: nextI,
+            self.input_bgI: bgimage[:,20:100,20:100,:],
+            self.input_nextI: nextI[:,20:100,20:100,:],
             self.truepos: poss,
-            self.truepos_next: poss_next,
+            self.truepos_next:poss_next,
             self.is_train: True
         })
 
@@ -645,10 +645,10 @@ class OODP:
 
         if self.step % self.summary_time == 0:
             summary_str = self.sess.run(self.summary_op, feed_dict={
-                self.input_I: I,
+                self.input_I: I[:,20:100,20:100,:],
                 self.input_actions: actions,
-                self.input_bgI: bgimage,
-                self.input_nextI: nextI,
+                self.input_bgI: bgimage[:,20:100,20:100,:],
+                self.input_nextI: nextI[:,20:100,20:100,:],
                 self.truepos: poss,
                 self.truepos_next: poss_next,
                 self.is_train: True
